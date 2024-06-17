@@ -1,0 +1,9 @@
+<form method="post">
+    <h1>Delete?</h1>
+    {% csrf_token %}
+
+    <button type="submit">Yes!</button>
+
+</form>
+
+    <button><a href="{% url 'book_list' %}">No!</a></button>

@@ -1,0 +1,17 @@
+<ul>
+    <li>
+        <p>Title: {{ book.title }}</p>
+        <p>Author: {{ book.author.first_name }} {{ book.author.last_name }}</p>
+        <p>Published date: {{ book.published_date }}</p>
+        <p>Pages: {{ book.pages }}</p>
+        {% if book.image %}
+            <p><img src="{{ book.image.url }}" alt="{{book.title}}"></p>
+        {% else %}
+            <p>No Image</p>
+        {% endif %}
+        <p>Have: {{ book.have }}</p>
+    </li>
+</ul>
+
+<button><a href="{% url 'book_update' book.pk %}">Update</a></button>
+<button><a href="{% url 'book_delete' book.pk %}">Delete</a></button>
